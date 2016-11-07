@@ -13,16 +13,39 @@ namespace ConsoleLab10_MovieList_
         {
             Console.WriteLine("Welcome to the Movie List Application!" + Environment.NewLine);
             Console.WriteLine("The List contains movies from the following categories:");
-            Console.WriteLine("(animated, drama, horror, and scifi)" + Environment.NewLine);
-            Console.Write("Which category are you interested in? ");
 
-            string genre = Console.ReadLine();
+            bool answer = true;
+            while (answer)
+            {
+                Console.WriteLine("(animated, drama, horror, and scifi)" + Environment.NewLine);
+                Console.Write("Which category are you interested in? ");
 
-            List<Movie> MovieList = new List<Movie>() { };
-            MovieList = MovieIO.MovieCatalog;
+                string genre = Console.ReadLine();
 
-            foreach (Movie m in MovieList) {
-                Console.WriteLine(m.name);
+                List<Movie> MovieList = new List<Movie>() { };
+                MovieList = MovieIO.MovieCatalog;
+
+                int i = 0;
+
+                foreach (Movie movie in MovieList)
+                {
+                    if (movie.genre == genre)
+                    {
+                        i++;
+                        Console.WriteLine(movie.name);
+                        if (i >= 10) break;
+                    }
+                }
+                Console.WriteLine("Would you like to continue? (yes or no)");
+                string yORn = Console.ReadLine();
+                if(yORn.ToLower() == "yes" || yORn.ToLower() == "y")
+                {
+                    answer = true;
+                }
+                else
+                {
+                    answer = false;
+                }
             }
         }
     }

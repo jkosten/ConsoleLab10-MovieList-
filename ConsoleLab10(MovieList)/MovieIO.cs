@@ -13,13 +13,8 @@ using System.Threading.Tasks;
 namespace ConsoleLab10_MovieList_
 
 {
-
     public class MovieIO
     {
-
-
-
-
         public readonly static List<Movie> default_MovieCatalog = new List<Movie>() {
 
            new Movie("Citizen Kane", "drama"),
