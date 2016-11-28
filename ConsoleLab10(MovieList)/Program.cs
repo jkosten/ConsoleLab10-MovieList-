@@ -25,6 +25,8 @@ namespace ConsoleLab10_MovieList_
                 List<Movie> MovieList = new List<Movie>() { };
                 MovieList = MovieIO.MovieCatalog;
 
+                //MovieList.OrderBy(movie => movie.genre).ToList();
+
                 int i = 0;
 
                 foreach (Movie movie in MovieList)
@@ -41,6 +43,7 @@ namespace ConsoleLab10_MovieList_
                 if(yORn.ToLower() == "yes" || yORn.ToLower() == "y")
                 {
                     answer = true;
+                    Console.Clear();
                 }
                 else
                 {
